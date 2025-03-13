@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JCI Togo - CONAT 2025</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <div class="logo">
+          <img src="logo .png" alt="JCI Togo Logo" class="logo-img">
+        </div>
+
+        <div class="nav-links">
+          <a href="#home" class="nav-link">Accueil</a>
+          <a href="#about" class="nav-link">À propos</a>
+          <a href="#program" class="nav-link">Programme</a>
+          <a href="#registration" class="nav-link">Inscription</a>
+          <a href="#partners" class="nav-link">Partenaires</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <span class="menu-icon">&#9776;</span>
+          <span class="close-icon" style="display: none;">&times;</span>
+        </button>
+      </div>
+
+      <!-- Menu mobile -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" class="mobile-nav-link">Accueil</a>
+        <a href="#about" class="mobile-nav-link">À propos</a>
+        <a href="#program" class="mobile-nav-link">Programme</a>
+        <a href="#registration" class="mobile-nav-link">Inscription</a>
+        <a href="#partners" class="mobile-nav-link">Partenaires</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <section id="home" class="hero-section">
+    <div class="hero-background">
+      <img
+        src="portrait-professor-work-educational-system.jpg"
+        alt="CONAT 2025"
+        class="hero-image"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">CONAT 2025</h1>
+      <p class="hero-subtitle">Agir et apporter des solutions durables</p>
+      <p class="hero-date">17-19 Avril 2025</p>
+      <div class="hero-cta">
+        <a href="#registration" class="cta-button">
+          Inscrivez-vous maintenant
+          <i data-lucide="chevron-right" class="cta-icon"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-header">
+        <h2 class="about-title">À propos du CONAT 2025</h2>
+        <p class="about-description">
+          Le Conseil National est l'événement phare de la JCI Togo, rassemblant les jeunes leaders pour façonner l'avenir.
+        </p>
+      </div>
+
+      <div class="about-values">
+        <div class="value-card">
+          <h3 class="value-title">Vision</h3>
+          <p class="value-description">Être le principal réseau de jeunes citoyens actifs au Togo</p>
+        </div>
+        <div class="value-card">
+          <h3 class="value-title">Mission</h3>
+          <p class="value-description">Offrir des opportunités de développement aux jeunes pour créer des changements positifs</p>
+        </div>
+        <div class="value-card">
+          <h3 class="value-title">Valeurs</h3>
+          <p class="value-description">Foi en Dieu, fraternité humaine, service à l'humanité</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="program" class="program-section">
+    <div class="container">
+      <h2 class="program-title">Programme</h2>
+
+      <div class="program-schedule">
+        <!-- Jour 1 -->
+        <div class="day-schedule">
+          <div class="day-header">
+            <h3 class="day-date">17 Avril 2025</h3>
+          </div>
+          <div class="day-events">
+            <div class="event">
+              <p class="event-time">09:00</p>
+              <p class="event-title">Cérémonie d'ouverture</p>
+            </div>
+            <div class="event">
+              <p class="event-time">10:30</p>
+              <p class="event-title">Conférence: Leadership et Innovation</p>
+            </div>
+            <div class="event">
+              <p class="event-time">14:00</p>
+              <p class="event-title">Ateliers thématiques</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jour 2 -->
+        <div class="day-schedule">
+          <div class="day-header">
+            <h3 class="day-date">18 Avril 2025</h3>
+          </div>
+          <div class="day-events">
+            <div class="event">
+              <p class="event-time">09:00</p>
+              <p class="event-title">Sessions de formation</p>
+            </div>
+            <div class="event">
+              <p class="event-time">14:00</p>
+              <p class="event-title">Table ronde: Développement durable</p>
+            </div>
+            <div class="event">
+              <p class="event-time">19:00</p>
+              <p class="event-title">Soirée de gala</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jour 3 -->
+        <div class="day-schedule">
+          <div class="day-header">
+            <h3 class="day-date">19 Avril 2025</h3>
+          </div>
+          <div class="day-events">
+            <div class="event">
+              <p class="event-time">09:00</p>
+              <p class="event-title">Assemblée générale</p>
+            </div>
+            <div class="event">
+              <p class="event-time">14:00</p>
+              <p class="event-title">Élections</p>
+            </div>
+            <div class="event">
+              <p class="event-time">16:00</p>
+              <p class="event-title">Cérémonie de clôture</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="registration" class="registration-section">
+    <div class="container">
+      <div class="registration-form">
+        <h2 class="registration-title">Inscription</h2>
+
+        <form id="registrationForm" class="form">
+          <div class="form-grid">
+            <!-- Nom -->
+            <div class="form-group">
+              <label for="lastName" class="form-label">Nom</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                class="form-input"
+                required
+              />
+            </div>
+
+            <!-- Prénoms -->
+            <div class="form-group">
+              <label for="firstName" class="form-label">Prénoms</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                class="form-input"
+                required
+              />
+            </div>
+
+            <!-- Organisation locale -->
+            <div class="form-group">
+              <label for="organization" class="form-label">Organisation locale</label>
+              <input
+                type="text"
+                id="organization"
+                name="organization"
+                class="form-input"
+                required
+              />
+            </div>
+
+            <!-- Titre -->
+            <div class="form-group">
+              <label for="title" class="form-label">Titre</label>
+              <select id="title" name="title" class="form-input" required>
+                <option value="">Sélectionnez une option</option>
+                <option value="member">Membre actif</option>
+                <option value="potential">Membre potentiel</option>
+                <option value="past">Past président</option>
+                <option value="senator">Sénateur</option>
+                <option value="guest">Invité</option>
+                <option value="partner">Partenaire</option>
+              </select>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                required
+              />
+            </div>
+
+            <!-- Téléphone -->
+            <div class="form-group">
+              <label for="phone" class="form-label">Téléphone</label>
+              <input
+                type="text"
+                id="phone"
+                name="phone"
+                class="form-input"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="form-group">
+            <label for="message" class="form-label">Message (optionnel)</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="form-input"
+            ></textarea>
+          </div>
+
+          <!-- Bouton de soumission -->
+          <div class="form-group">
+            <button type="submit" class="submit-button">
+              S'inscrire
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="partners" class="partners-section">
+    <div class="container">
+      <h2 class="partners-title">Nos Partenaires</h2>
+
+      <div class="partners-grid">
+        <div class="partner-logo">
+          <img src="p1.png" alt="JCI Togo" class="partner-image">
+        </div>
+        <div class="partner-logo">
+          <img src="p2.png" alt="JCI Lomé Cocotier" class="partner-image">
+        </div>
+        <div class="partner-logo">
+          <img src="p3.png" alt="Partner 3" class="partner-image">
+        </div>
+        <!-- <div class="partner-logo">
+          <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop" alt="Partner 4" class="partner-image">
+        </div> -->
+      </div>
+
+      <div class="partnership-cta">
+        <h3 class="cta-title">Devenez Partenaire</h3>
+        <p class="cta-description">
+          Rejoignez-nous dans cette aventure exceptionnelle et contribuez au développement du leadership jeune au Togo.
+          Découvrez nos différentes opportunités de partenariat.
+        </p>
+        <a href="#contact" class="cta-button">Contactez-nous</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="contact-title">Contact</h2>
+
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="info-item">
+            <i data-lucide="mail" class="info-icon"></i>
+            <div class="info-text">
+              <p class="info-label">Email</p>
+              <p class="info-value">contact@jcitogo.org</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i data-lucide="phone" class="info-icon"></i>
+            <div class="info-text">
+              <p class="info-label">Téléphone</p>
+              <p class="info-value">+228 90 00 00 00</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i data-lucide="map-pin" class="info-icon"></i>
+            <div class="info-text">
+              <p class="info-label">Adresse</p>
+              <p class="info-value">123 Rue Example, Lomé, Togo</p>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <h3 class="social-title">Suivez-nous</h3>
+            <div class="social-icons">
+              <a href="https://facebook.com" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="facebook" class="icon"></i>
+              </a>
+              <a href="https://instagram.com" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="instagram" class="icon"></i>
+              </a>
+              <a href="https://linkedin.com" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="linkedin" class="icon"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h3 class="form-title">Envoyez-nous un message</h3>
+          <form class="form">
+            <div class="form-group">
+              <label for="name" class="form-label">Nom complet</label>
+              <input type="text" id="name" name="name" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" rows="4" class="form-input" required></textarea>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="submit-button">Envoyer</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Logo et description -->
+        <div class="footer-section">
+          <img
+            src="logo .png"
+            alt="JCI Togo Logo"
+            class="footer-logo"
+          />
+          <p class="footer-text">
+            Jeune Chambre Internationale Togo
+          </p>
+        </div>
+
+        <!-- Liens utiles -->
+        <div class="footer-section">
+          <h3 class="footer-heading">Liens utiles</h3>
+          <ul class="footer-links">
+            <li><a href="/mentions-legales" class="footer-link">Mentions légales</a></li>
+            <li><a href="/confidentialite" class="footer-link">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-section">
+          <h3 class="footer-heading">Contact</h3>
+          <ul class="footer-links">
+            <li class="footer-text">Email: contact@jcitogo.org</li>
+            <li class="footer-text">Tél: +228 90 00 00 00</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-copyright">
+        <p class="footer-text">
+          © JCI Togo 2025 - Tous droits réservés
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
