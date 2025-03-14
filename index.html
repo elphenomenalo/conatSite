@@ -5,13 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JCI Togo - CONAT 2025</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Lien de swipper wrapper -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<!-- Lien du aos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Font-awesone -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
 </head>
 <body>
   <nav class="navbar">
     <div class="container">
       <div class="navbar-content">
         <div class="logo">
-          <img src="logo .png" alt="JCI Togo Logo" class="logo-img">
+          <img src="p1.png" alt="JCI Togo Logo" class="logo-img">
         </div>
 
         <div class="nav-links">
@@ -53,7 +65,11 @@
     </div>
 
     <div class="hero-content">
-      <h1 class="hero-title">CONAT 2025</h1>
+      <div class="logo">
+        <img src="logo .png" alt="JCI Togo Logo" data-aos="fade-down" class="logo-img log">
+      </div>
+      <div data-aos="fade-up">
+        <h1 class="hero-title">CONAT 2025</h1>
       <p class="hero-subtitle">Agir et apporter des solutions durables</p>
       <p class="hero-date">17-19 Avril 2025</p>
       <div class="hero-cta">
@@ -62,13 +78,14 @@
           <i data-lucide="chevron-right" class="cta-icon"></i>
         </a>
       </div>
+      </div>
     </div>
   </section>
 
 
   <section id="about" class="about-section">
     <div class="container">
-      <div class="about-header">
+      <div class="about-header" data-aos="fade-up-right">
         <h2 class="about-title">À propos du CONAT 2025</h2>
         <p class="about-description">
           Le Conseil National est l'événement phare de la JCI Togo, rassemblant les jeunes leaders pour façonner l'avenir.
@@ -76,15 +93,15 @@
       </div>
 
       <div class="about-values">
-        <div class="value-card">
+        <div class="value-card" data-aos="zoom-in-up">
           <h3 class="value-title">Vision</h3>
           <p class="value-description">Être le principal réseau de jeunes citoyens actifs au Togo</p>
         </div>
-        <div class="value-card">
+        <div class="value-card" data-aos="zoom-in-up" data-oas-duration="2000">
           <h3 class="value-title">Mission</h3>
           <p class="value-description">Offrir des opportunités de développement aux jeunes pour créer des changements positifs</p>
         </div>
-        <div class="value-card">
+        <div class="value-card" data-aos="zoom-in-up" data-oas-duration="4000">
           <h3 class="value-title">Valeurs</h3>
           <p class="value-description">Foi en Dieu, fraternité humaine, service à l'humanité</p>
         </div>
@@ -95,11 +112,11 @@
 
   <section id="program" class="program-section">
     <div class="container">
-      <h2 class="program-title">Programme</h2>
+      <h2 class="program-title" data-aos="zoom-in">Programme</h2>
 
       <div class="program-schedule">
         <!-- Jour 1 -->
-        <div class="day-schedule">
+        <div class="day-schedule"  data-aos="fade-down-right">
           <div class="day-header">
             <h3 class="day-date">17 Avril 2025</h3>
           </div>
@@ -120,7 +137,7 @@
         </div>
 
         <!-- Jour 2 -->
-        <div class="day-schedule">
+        <div class="day-schedule" data-aos="fade-up" data-oas-delay="2000">
           <div class="day-header">
             <h3 class="day-date">18 Avril 2025</h3>
           </div>
@@ -141,7 +158,7 @@
         </div>
 
         <!-- Jour 3 -->
-        <div class="day-schedule">
+        <div class="day-schedule" data-aos="fade-down-left" data-oas-delay="4000">
           <div class="day-header">
             <h3 class="day-date">19 Avril 2025</h3>
           </div>
@@ -164,13 +181,121 @@
     </div>
   </section>
 
+  <section>
+    <div class="container">
+      <h2 class="program-title" data-aos="zoom-in">Nos Partenaires Locaux</h2>
+      <p style="text-align: center; width: 80%;">
+        Nous collaborons avec 13 organisations locales engagées dans le développement et l’innovation. Découvrez leurs contributions et les 
+        dirigeants qui les représentent. Ces organisations jouent un rôle clé dans notre écosystème et nous sommes fiers de les mettre en avant.
+      </p>
+      <div class="row">
+          <div class="col-md-4 col-sm-6">
+              <div class="our-team">
+                  <div class="team-image">
+                      <img src="im1.jpg">
+                      <p class="description">
+                        <img src="p1.png" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 2px solid #fff;" />
+                      </p>
+                      <ul class="social">
+                          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                      </ul>
+                  </div>
+                  <div class="team-info">
+                      <h3 class="title">Eugenie NEMY</h3>
+                      <span class="post">Présidente de la JCI Lomé Cocotier</span>
+                  </div>
+              </div>
+          </div>
+   
+          <div class="col-md-4 col-sm-6">
+            <div class="our-team">
+                <div class="team-image">
+                    <img src="im1.jpg">
+                    <p class="description">
+                      <img src="p1.png" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 2px solid #fff;" />
+
+                    </p>
+                    <ul class="social">
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+                <div class="team-info">
+                    <h3 class="title">Eugenie NEMY</h3>
+                    <span class="post">Présidente de la JCI Lomé Cocotier</span>
+                </div>
+            </div>
+        </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="our-team">
+                <div class="team-image">
+                    <img src="im1.jpg">
+                    <p class="description">
+                      <img src="p1.png" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 2px solid #fff;" />
+
+                    </p>
+                    <ul class="social">
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+                <div class="team-info">
+                    <h3 class="title">Eugenie NEMY</h3>
+                    <span class="post">Présidente de la JCI Lomé Cocotier</span>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+  </section>
+
+
+  <!-- Gallery -->
+   <section style="margin: 45px 0;">
+    <div>
+      <h2 class="program-title" data-aos="zoom-in" data-aos="fade-down">Gallerie</h2>
+    </div>
+    <div class="gallerys" data-aos="fade-down">
+    <input type="radio" name="position" checked />
+    <input type="radio" name="position" />
+    <input type="radio" name="position" />
+    <input type="radio" name="position" />
+    <input type="radio" name="position" />
+    <input type="radio" name="position" />
+  <div id="carousel">
+    <div class="item">
+      <img src="FT_-305.jpg" width="400px" height="380px" alt="image">
+    </div>
+    <div class="item">
+      <img src="FT_-306.jpg" width="400px" height="380px" alt="image">
+    </div>
+    <div class="item">
+      <img src="FT_-307.jpg" width="400px" height="380px" alt="image">
+    </div>
+    <div class="item">
+      <img src="FT_-308.jpg" width="400px" height="380px" alt="image">
+    </div>
+    <div class="item">
+      <img src="FT_-309.jpg" width="400px" height="380px" alt="image">
+    </div>
+    <div class="item">
+      <img src="FT_-310.jpg" width="400px" height="380px" alt="image">
+    </div>
+    <div>
+    </div>
+   </section>
+
 
   <section id="registration" class="registration-section">
     <div class="container">
       <div class="registration-form">
-        <h2 class="registration-title">Inscription</h2>
+        <h2 class="registration-title" data-aos="fade-up-right">Inscription</h2>
 
-        <form id="registrationForm" class="form">
+        <form id="registrationForm" class="form" data-aos="fade-down-left">
           <div class="form-grid">
             <!-- Nom -->
             <div class="form-group">
@@ -271,24 +396,21 @@
 
   <section id="partners" class="partners-section">
     <div class="container">
-      <h2 class="partners-title">Nos Partenaires</h2>
-
-      <div class="partners-grid">
-        <div class="partner-logo">
-          <img src="p1.png" alt="JCI Togo" class="partner-image">
-        </div>
-        <div class="partner-logo">
+      <h2 class="partners-title" data-aos="fade-down">Nos Partenaires</h2>
+      <div class="partners-grid" style="margin: 0 auto;">
+      
+        <div class="partner-logo" data-aos="fade-down">
           <img src="p2.png" alt="JCI Lomé Cocotier" class="partner-image">
         </div>
-        <div class="partner-logo">
-          <img src="p3.png" alt="Partner 3" class="partner-image">
+        <div class="partner-logo" data-aos="fade-left">
+          <img src="p4.png" alt="Partner 3" class="partner-image">
         </div>
         <!-- <div class="partner-logo">
           <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop" alt="Partner 4" class="partner-image">
         </div> -->
       </div>
 
-      <div class="partnership-cta">
+      <div class="partnership-cta" data-aos="flip-left">
         <h3 class="cta-title">Devenez Partenaire</h3>
         <p class="cta-description">
           Rejoignez-nous dans cette aventure exceptionnelle et contribuez au développement du leadership jeune au Togo.
@@ -301,10 +423,10 @@
 
   <section id="contact" class="contact-section">
     <div class="container">
-      <h2 class="contact-title">Contact</h2>
+      <h2 class="contact-title" data-aos="fade-down">Contact</h2>
 
       <div class="contact-content">
-        <div class="contact-info">
+        <div class="contact-info" data-aos="fade-right">
           <div class="info-item">
             <i data-lucide="mail" class="info-icon"></i>
             <div class="info-text">
@@ -333,19 +455,19 @@
             <h3 class="social-title">Suivez-nous</h3>
             <div class="social-icons">
               <a href="https://facebook.com" class="social-icon" target="_blank" rel="noopener noreferrer">
-                <i data-lucide="facebook" class="icon"></i>
+                <i class="fa-brands fa-facebook-f"></i>
               </a>
               <a href="https://instagram.com" class="social-icon" target="_blank" rel="noopener noreferrer">
-                <i data-lucide="instagram" class="icon"></i>
+                <i class="fa-brands fa-instagram"></i>
               </a>
               <a href="https://linkedin.com" class="social-icon" target="_blank" rel="noopener noreferrer">
-                <i data-lucide="linkedin" class="icon"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
               </a>
             </div>
           </div>
         </div>
 
-        <div class="contact-form">
+        <div class="contact-form" data-aos="fade-left">
           <h3 class="form-title">Envoyez-nous un message</h3>
           <form class="form">
             <div class="form-group">
@@ -370,7 +492,7 @@
   </section>
 
 
-  <footer class="footer">
+  <footer class="footer" data-aos="fade-up">
     <div class="container">
       <div class="footer-grid">
         <!-- Logo et description -->
@@ -379,6 +501,7 @@
             src="logo .png"
             alt="JCI Togo Logo"
             class="footer-logo"
+            data-aos="fade-right"
           />
           <p class="footer-text">
             Jeune Chambre Internationale Togo
@@ -398,8 +521,8 @@
         <div class="footer-section">
           <h3 class="footer-heading">Contact</h3>
           <ul class="footer-links">
-            <li class="footer-text">Email: contact@jcitogo.org</li>
-            <li class="footer-text">Tél: +228 90 00 00 00</li>
+            <li class="footer-text">Email: vpenjcitogo@gmail.com</li>
+            <li class="footer-text">Tél: +228 90 61 00 40 | +228 98 68 43 14</li>
           </ul>
         </div>
       </div>
@@ -413,5 +536,11 @@
     </div>
   </footer>
   <script src="script.js"></script>
+  <!-- Lien de swipper wrapper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- Lien su aos -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Bootsrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
