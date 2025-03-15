@@ -23,7 +23,7 @@
     <div class="container">
       <div class="navbar-content">
         <div class="logo">
-          <img src="p1.png" alt="JCI Togo Logo" class="logo-img">
+          <img src="images/p1.png" alt="JCI Togo Logo" class="logo-img">
         </div>
 
         <div class="nav-links">
@@ -54,10 +54,13 @@
   </nav>
 
 
+  <?php
+    include_once("Fonctionnalty/userRegister.php");
+  ?>
   <section id="home" class="hero-section">
     <div class="hero-background">
       <img
-        src="portrait-professor-work-educational-system.jpg"
+        src="images/portrait-professor-work-educational-system.jpg"
         alt="CONAT 2025"
         class="hero-image"
       />
@@ -66,7 +69,7 @@
 
     <div class="hero-content">
       <div class="logo">
-        <img src="logo .png" alt="JCI Togo Logo" data-aos="fade-down" class="logo-img log">
+        <img src="images/logo .png" alt="JCI Togo Logo" data-aos="fade-down" class="logo-img log">
       </div>
       <div data-aos="fade-up">
         <h1 class="hero-title">CONAT 2025</h1>
@@ -334,22 +337,22 @@
     
   <div id="carousel">
     <div class="item">
-      <img src="FT_-305.jpg" width="400px" height="380px" alt="image">
+      <img src="images/FT_-305.jpg" width="400px" height="380px" alt="image">
     </div>
     <div class="item">
-      <img src="FT_-306.jpg" width="400px" height="380px" alt="image">
+      <img src="images/FT_-306.jpg" width="400px" height="380px" alt="image">
     </div>
     <div class="item">
-      <img src="FT_-307.jpg" width="400px" height="380px" alt="image">
+      <img src="images/FT_-307.jpg" width="400px" height="380px" alt="image">
     </div>
     <div class="item">
-      <img src="FT_-308.jpg" width="400px" height="380px" alt="image">
+      <img src="images/FT_-308.jpg" width="400px" height="380px" alt="image">
     </div>
     <div class="item">
-      <img src="FT_-309.jpg" width="400px" height="380px" alt="image">
+      <img src="images/FT_-309.jpg" width="400px" height="380px" alt="image">
     </div>
     <div class="item">
-      <img src="FT_-310.jpg" width="400px" height="380px" alt="image">
+      <img src="images/FT_-310.jpg" width="400px" height="380px" alt="image">
     </div>
     <div>
     </div>
@@ -361,7 +364,15 @@
       <div class="registration-form">
         <h2 class="registration-title" data-aos="fade-up-right">Inscription</h2>
 
-        <form id="registrationForm" class="form" data-aos="fade-down-left">
+        <?php
+          if(isset($msg)){
+            echo '<p class="message">' .$msg. '</p>';
+          }elseif(isset( $msgSuccess)){
+            echo '<p class="msgSuccess">'.  $msgSuccess .'</p>';
+          }
+        ?>
+
+        <form id="registrationForm" class="form" data-aos="fade-down-left" method="POST">
           <div class="form-grid">
             <!-- Nom -->
             <div class="form-group">
@@ -371,7 +382,7 @@
                 id="lastName"
                 name="lastName"
                 class="form-input"
-                required
+                
               />
             </div>
 
@@ -383,7 +394,7 @@
                 id="firstName"
                 name="firstName"
                 class="form-input"
-                required
+                
               />
             </div>
 
@@ -395,14 +406,14 @@
                 id="organization"
                 name="organization"
                 class="form-input"
-                required
+                
               />
             </div>
 
             <!-- Titre -->
             <div class="form-group">
               <label for="title" class="form-label">Titre</label>
-              <select id="title" name="title" class="form-input" required>
+              <select id="title" name="title" class="form-input">
                 <option value="">Sélectionnez une option</option>
                 <option value="member">Membre actif</option>
                 <option value="potential">Membre potentiel</option>
@@ -421,7 +432,7 @@
                 id="email"
                 name="email"
                 class="form-input"
-                required
+                
               />
             </div>
 
@@ -433,7 +444,7 @@
                 id="phone"
                 name="phone"
                 class="form-input"
-                required
+                
               />
             </div>
           </div>
@@ -451,7 +462,7 @@
 
           <!-- Bouton de soumission -->
           <div class="form-group">
-            <button type="submit" class="submit-button">
+            <button type="submit" name="userSubmit" class="submit-button">
               S'inscrire
             </button>
           </div>
@@ -466,7 +477,7 @@
       <div class="partners-grid" style="margin: 0 auto;">
       
         <div class="partner-logo" data-aos="fade-left">
-          <img src="p4.png" alt="Partner 3" class="partner-image">
+          <img src="images/p4.png" alt="Partner 3" class="partner-image">
         </div>
         <!-- <div class="partner-logo">
           <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop" alt="Partner 4" class="partner-image">
@@ -561,7 +572,7 @@
         <!-- Logo et description -->
         <div class="footer-section">
           <img
-            src="logo .png"
+            src="images/logo .png"
             alt="JCI Togo Logo"
             class="footer-logo"
             data-aos="fade-right"

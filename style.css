@@ -1132,3 +1132,21 @@ Generic layout (demo looks)
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+/* Message */
+.message{
+  padding: 8px 0;
+  text-align: center;
+  width: 95%;
+  background-color: #FFCCCC;
+  color: #FF3333;
+  font-size: 1rem;
+}
+.msgSuccess{
+  padding: 8px 0;
+  text-align: center;
+  width: 95%;
+  background-color: #CCFFCC;
+  color: #00CC00;
+  font-size: 1rem;
+}
