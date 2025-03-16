@@ -1,11 +1,7 @@
 <?php
-include_once("../config/db.php");
 
 
-
-
-
-
+include_once("../config/db.php");   
  
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     die("ID de l'événement non spécifié ou invalide.");
@@ -21,7 +17,6 @@ $programme = $reqProgramme->fetch(PDO::FETCH_ASSOC);
 if (!$programme) {
     die("Événement non trouvé.");
 }
-
 
 
 

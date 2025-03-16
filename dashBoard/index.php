@@ -1,6 +1,8 @@
 <!-- Inclure la navBar -->
 <?php
+
 include_once("../include/navBar.php");
+
 
 ?>
 <!-- ============= -->

@@ -1,6 +1,8 @@
 <?php
 include_once("../config/db.php");
 
+
+
 // Vérifions si le formulaire a été envoyé
 if (isset($_POST["submitEvent"])) {
 

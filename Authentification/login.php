@@ -1,5 +1,15 @@
 <?php
-    include_once("../Fonctionnalty/adminRegister.php");
+ session_start();
+    include_once("../Fonctionnalty/adminLogin.php");
+
+   
+
+// Vérifier si l'utilisateur est connecté
+if (!isset($_SESSION['user_id'])) {
+    // Rediriger vers la page de connexion
+    header("Location: login.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -152,16 +162,12 @@ button{
         ?>
 
         <label for="username">Email</label>
-        <input type="text" placeholder="Nom d'utilisateur" name="username" id="username">
-        <label for="username">Email</label>
         <input type="email" placeholder="Email" name="email" id="username">
 
         <label for="password">Mot de passe</label>
         <input type="password" placeholder="Mot de passe" name="passwords" id="password">
-        <label for="password">Confirmer le Mot de passe</label>
-        <input type="password" placeholder="Mot de passe" name="password" id="password">
 
-        <button type="submit" name="register">Inscription</button>
+        <button type="submit" name="login">Se connecter</button>
         
     </form>
 </body>

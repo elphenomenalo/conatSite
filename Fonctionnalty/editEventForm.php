@@ -1,6 +1,8 @@
 <?php
 include_once("../config/db.php");
 
+
+
 // Vérifier si l'ID est présent dans l'URL
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     die("ID de l'événement non spécifié ou invalide.");

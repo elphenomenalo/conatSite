@@ -1,5 +1,63 @@
 <?php
-    include_once("../Fonctionnalty/programmeEdit.php");
+include_once("../config/db.php");
+session_start();
+
+// Vérifier si l'utilisateur est connecté
+if (!isset($_SESSION['user_id'])) {
+    // Rediriger vers la page de connexion
+    header("Location: login.php");
+    exit();
+}
+
+if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+    die("ID de l'événement non spécifié ou invalide.");
+}
+
+$programmeId = intval($_GET['id']);
+
+$reqProgramme = $con->prepare("SELECT * FROM programme WHERE id = :id");
+$reqProgramme->execute([':id' => $programmeId]);
+$programme = $reqProgramme->fetch(PDO::FETCH_ASSOC);
+
+if (!$programme) {
+    die("Événement non trouvé.");
+}
+
+if (isset($_POST['submitPro'])) {
+    $id = intval($_POST['id']);
+    $date = htmlspecialchars($_POST['date']);
+    $timeStart = htmlspecialchars($_POST['timeStart']);
+    $timeEnd = htmlspecialchars($_POST['timeEnd']);
+    $lieu = htmlspecialchars($_POST['lieu']);
+    $activity = htmlspecialchars($_POST['activity']);
+
+    if (!empty($date) && !empty($timeStart) && !empty($timeEnd) && !empty($lieu) && !empty($activity)) {
+        try {
+            $reqUpdate = $con->prepare("
+                UPDATE programme
+                SET date = :date, heureStart = :heureStart, heureEnd = :heureEnd, lieu = :lieu, activity = :activity
+                WHERE id = :id
+            ");
+            $reqUpdate->execute([
+                ':date' => $date,
+                ':heureStart' => $timeStart,
+                ':heureEnd' => $timeEnd,
+                ':lieu' => $lieu,
+                ':activity' => $activity,
+                ':id' => $id
+            ]);
+
+            header("Location: index.php");
+            exit();
+        } catch (PDOException $e) {
+            header("Location: programmes.php?error=1");
+            exit();
+        }
+    } else {
+        header("Location: programmes.php?error=2");
+        exit();
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +70,7 @@
 </head>
 <body>
     <div class="leading-loose">
-        <form class="p-10 bg-white rounded shadow-xl" action="editProgrammeForm.php" method="POST">
+        <form class="p-10 bg-white rounded shadow-xl" action="" method="POST">
             <input type="hidden" name="id" value="<?= $programme['id'] ?>">
             <div class="">
                 <label class="block text-sm text-gray-600" for="date">Date</label>

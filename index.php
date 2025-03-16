@@ -1,65 +1,9 @@
 <?php
-  require_once("config/db.php");
+  include_once("Navbar/nav.php");
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JCI Togo - CONAT 2025</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Lien de swipper wrapper -->
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-<!-- Lien du aos -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<!-- Font-awesone -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<!-- bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-</head>
-<body>
-  <nav class="navbar">
-    <div class="container">
-      <div class="navbar-content">
-        <div class="logo">
-          <img src="images/p1.png" alt="JCI Togo Logo" class="logo-img">
-        </div>
-
-        <div class="nav-links">
-          <a href="#home" class="nav-link">Accueil</a>
-          <a href="#about" class="nav-link">À propos</a>
-          <a href="#program" class="nav-link">Programme</a>
-          <a href="#registration" class="nav-link">Inscription</a>
-          <a href="#partners" class="nav-link">Partenaires</a>
-          <a href="#contact" class="nav-link">Contact</a>
-        </div>
-
-        <button class="menu-toggle" onclick="toggleMenu()">
-          <span class="menu-icon">&#9776;</span>
-          <span class="close-icon" style="display: none;">&times;</span>
-        </button>
-      </div>
-
-      <!-- Menu mobile -->
-      <div class="mobile-menu" id="mobileMenu">
-        <a href="#home" class="mobile-nav-link">Accueil</a>
-        <a href="#about" class="mobile-nav-link">À propos</a>
-        <a href="#program" class="mobile-nav-link">Programme</a>
-        <a href="#registration" class="mobile-nav-link">Inscription</a>
-        <a href="#partners" class="mobile-nav-link">Partenaires</a>
-        <a href="#contact" class="mobile-nav-link">Contact</a>
-      </div>
-    </div>
-  </nav>
 
 
-  <?php
-    include_once("Fonctionnalty/userRegister.php");
-  ?>
+  
   <section id="home" class="hero-section">
     <div class="hero-background">
       <img
@@ -269,154 +213,38 @@
     <input type="radio" name="position" />
     
   <div id="carousel">
+    <?php if($galleries) : ?>
+      <?php foreach($galleries as $gallerie) : ?>
     <div class="item">
-      <img src="images/FT_-305.jpg" width="400px" height="380px" alt="image">
+      <img src="gallery/<?= htmlspecialchars($gallerie["photo"]) ?>" width="400px" height="380px" alt="<?= htmlspecialchars($gallerie["title"]) ?>">
     </div>
-    <div class="item">
-      <img src="images/FT_-306.jpg" width="400px" height="380px" alt="image">
-    </div>
-    <div class="item">
-      <img src="images/FT_-307.jpg" width="400px" height="380px" alt="image">
-    </div>
-    <div class="item">
-      <img src="images/FT_-308.jpg" width="400px" height="380px" alt="image">
-    </div>
-    <div class="item">
-      <img src="images/FT_-309.jpg" width="400px" height="380px" alt="image">
-    </div>
-    <div class="item">
-      <img src="images/FT_-310.jpg" width="400px" height="380px" alt="image">
-    </div>
+   <?php endforeach; ?>
+    <?php else: ?>
+      <p>Aucune image disponible dans la gallerie!</p>
+    <?php endif; ?>
     <div>
     </div>
    </section>
 
 
-  <section id="registration" class="registration-section">
-    <div class="container">
-      <div class="registration-form">
-        <h2 class="registration-title" data-aos="fade-up-right">Inscription</h2>
-
-        <?php
-          if(isset($msg)){
-            echo '<p class="message">' .$msg. '</p>';
-          }elseif(isset( $msgSuccess)){
-            echo '<p class="msgSuccess">'.  $msgSuccess .'</p>';
-          }
-        ?>
-
-        <form id="registrationForm" class="form" data-aos="fade-down-left" method="POST">
-          <div class="form-grid">
-            <!-- Nom -->
-            <div class="form-group">
-              <label for="lastName" class="form-label">Nom</label>
-              <input
-                type="text"
-                id="lastName"
-                name="lastName"
-                class="form-input"
-                
-              />
-            </div>
-
-            <!-- Prénoms -->
-            <div class="form-group">
-              <label for="firstName" class="form-label">Prénoms</label>
-              <input
-                type="text"
-                id="firstName"
-                name="firstName"
-                class="form-input"
-                
-              />
-            </div>
-
-            <!-- Organisation locale -->
-            <div class="form-group">
-              <label for="organization" class="form-label">Organisation locale</label>
-              <input
-                type="text"
-                id="organization"
-                name="organization"
-                class="form-input"
-                
-              />
-            </div>
-
-            <!-- Titre -->
-            <div class="form-group">
-              <label for="title" class="form-label">Titre</label>
-              <select id="title" name="title" class="form-input">
-                <option value="">Sélectionnez une option</option>
-                <option value="member">Membre actif</option>
-                <option value="potential">Membre potentiel</option>
-                <option value="past">Past président</option>
-                <option value="senator">Sénateur</option>
-                <option value="guest">Invité</option>
-                <option value="partner">Partenaire</option>
-              </select>
-            </div>
-
-            <!-- Email -->
-            <div class="form-group">
-              <label for="email" class="form-label">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="form-input"
-                
-              />
-            </div>
-
-            <!-- Téléphone -->
-            <div class="form-group">
-              <label for="phone" class="form-label">Téléphone</label>
-              <input
-                type="text"
-                id="phone"
-                name="phone"
-                class="form-input"
-                
-              />
-            </div>
-          </div>
-
-          <!-- Message -->
-          <div class="form-group">
-            <label for="message" class="form-label">Message (optionnel)</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              class="form-input"
-            ></textarea>
-          </div>
-
-          <!-- Bouton de soumission -->
-          <div class="form-group">
-            <button type="submit" name="userSubmit" class="submit-button">
-              S'inscrire
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
   <section id="partners" class="partners-section">
     <div class="container">
       <h2 class="partners-title" data-aos="fade-down">Nos Partenaires</h2>
-      <div class="partners-grid" style="margin: 0 auto;">
-      
+      <div class="partners-grid">
+      <?php  if($partenaires): ?>
+        <?php foreach($partenaires as $partenaire) : ?>
         <div class="partner-logo" data-aos="fade-left">
-          <img src="images/p4.png" alt="Partner 3" class="partner-image">
+          <img src="partenaire/<?= htmlspecialchars($partenaire["photo"]) ?>" alt="<?= htmlspecialchars($partenaire["title"]) ?>" class="partner-image">
         </div>
-        <!-- <div class="partner-logo">
-          <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop" alt="Partner 4" class="partner-image">
-        </div> -->
+        <?php endforeach; ?>
+        
+        <?php else : ?>
+        <tr>
+            <td colspan="6" class="text-center py-3 px-4">Aucun partenaire pour le moment.</td>
+        </tr>
+       <?php endif; ?>
       </div>
-
+      
       <div class="partnership-cta" data-aos="flip-left">
         <h3 class="cta-title">Devenez Partenaire</h3>
         <p class="cta-description">
@@ -428,75 +256,6 @@
     </div>
   </section>
 
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <h2 class="contact-title" data-aos="fade-down">Contact</h2>
-
-      <div class="contact-content">
-        <div class="contact-info" data-aos="fade-right">
-          <div class="info-item">
-            <i data-lucide="mail" class="info-icon"></i>
-            <div class="info-text">
-              <p class="info-label">Email</p>
-              <p class="info-value">vpenjcitogo@gmail.com</p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <i data-lucide="phone" class="info-icon"></i>
-            <div class="info-text">
-              <p class="info-label">Téléphone</p>
-              <p class="info-value">+228 90 61 00 40 | +228 98 68 43 14</p>
-            </div>
-          </div>
-
-          <!-- <div class="info-item">
-            <i data-lucide="map-pin" class="info-icon"></i>
-            <div class="info-text">
-              <p class="info-label">Adresse</p>
-              <p class="info-value">123 Rue Example, Lomé, Togo</p>
-            </div>
-          </div> -->
-
-          <div class="social-links">
-            <h3 class="social-title">Suivez-nous</h3>
-            <div class="social-icons">
-              <a href="https://facebook.com" class="social-icon" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-              <a href="https://instagram.com" class="social-icon" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="https://linkedin.com" class="social-icon" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-form" data-aos="fade-left">
-          <h3 class="form-title">Envoyez-nous un message</h3>
-          <form class="form" action="Fonctionnalty/phpMail.php" method="PODT">
-            <div class="form-group">
-              <label for="name" class="form-label">Nom complet</label>
-              <input type="text" id="name" name="name" class="form-input" required>
-            </div>
-            <div class="form-group">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" id="email" name="email" class="form-input" required>
-            </div>
-            <div class="form-group">
-              <label for="message" class="form-label">Message</label>
-              <textarea id="message" name="message" rows="4" class="form-input" required></textarea>
-            </div>
-            <div class="form-group">
-              <button type="submit" name="submitMail" class="submit-button">Envoyer</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
 
 
   <footer class="footer" data-aos="fade-up">

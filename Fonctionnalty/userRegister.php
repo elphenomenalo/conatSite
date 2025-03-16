@@ -47,7 +47,7 @@
 
                 ]);
 
-                $msgSuccess = "Inscription Validé. Merci!";
+                $msgSuccess = "inscription validée, la commission CONAT rentrera en contact avec vous pour le payement de votre frais de participation!";
             }
                     
                 }else{
