@@ -4,7 +4,7 @@
 
     try{
         
-        $con = new PDO("mysql:host=localhost; dbname=jciTogo; charset=utf8", "root", "");
+        $con = new PDO("mysql:host=fdb1029.awardspace.net; dbname=4604518_jcitogo; charset=utf8", "4604518_jcitogo", "@Rodrigue@7");
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
  
         // Récuppération de tous les données de l'utilisateur dans notre base de donnée
