@@ -1,7 +1,9 @@
 <!-- Inclure la navBar -->
 <?php
      include_once("../include/navBar.php");
+     
 ?>
+
 <!-- ============= -->
     
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
@@ -11,24 +13,35 @@
                 <div class="flex flex-wrap">
                     <div class="w-full lg:w-1/2 my-6 pr-0 lg:pr-2">
                         <p class="text-xl pb-6 flex items-center">
-                            <i class="fas fa-list mr-3"></i> Contact Form
+                            <i class="fas fa-list mr-3"></i> Ajouter un programme
                         </p>
+                        <?php if(isset($errorMsg)){
+                            '<p class="message">'. $errorMsg .'</p>';
+                        } ?>
                         <div class="leading-loose">
-                            <form class="p-10 bg-white rounded shadow-xl">
+                            <form class="p-10 bg-white rounded shadow-xl" method="POST">
                                 <div class="">
-                                    <label class="block text-sm text-gray-600" for="name">Name</label>
-                                    <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="name" name="name" type="text" required="" placeholder="Your Name" aria-label="Name">
+                                    <label class="block text-sm text-gray-600" for="date">Date</label>
+                                    <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="date" name="date" type="date"  aria-label="Name">
+                                </div>
+                                <div class="">
+                                    <label class="block text-sm text-gray-600" for="time">Heure de début</label>
+                                    <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="time" name="time" type="time">
+                                </div>
+                                <div class="">
+                                    <label class="block text-sm text-gray-600" for="times">Heure de Fin</label>
+                                    <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="times" name="timeEnd" type="time">
                                 </div>
                                 <div class="mt-2">
-                                    <label class="block text-sm text-gray-600" for="email">Email</label>
-                                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="email" name="email" type="text" required="" placeholder="Your Email" aria-label="Email">
+                                    <label class=" block text-sm text-gray-600" for="lieu">Lieu</label>
+                                    <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="lieu" name="lieu" rows="6" placeholder="Lieu.." style="height: 7vh;"></textarea>
                                 </div>
                                 <div class="mt-2">
-                                    <label class=" block text-sm text-gray-600" for="message">Message</label>
-                                    <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="message" name="message" rows="6" required="" placeholder="Your inquiry.." aria-label="Email"></textarea>
+                                    <label class=" block text-sm text-gray-600" for="activity">Activité</label>
+                                    <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="activity" name="activity" rows="6" placeholder="Activité.." style="height: 10vh;"></textarea>
                                 </div>
                                 <div class="mt-6">
-                                    <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Submit</button>
+                                    <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" name="submitPro" type="submit">Ajouter</button>
                                 </div>
                             </form>
                         </div>
@@ -38,6 +51,14 @@
                         <p class="text-xl pb-6 flex items-center">
                             <i class="fas fa-list mr-3"></i> Ajouter un évènement
                         </p>
+
+                        <?php
+                            if(isset($msgError)){
+                                echo '<p class="message">' .$msgError.'</p>';
+                            }elseif(isset($msgSuccess )){
+                                echo '<p class="msgSuccess">'.$msgSuccess.'</p>';
+                            }
+                        ?>
                         <div class="leading-loose">
                             <form class="p-10 bg-white rounded shadow-xl" method="POST" enctype="multipart/form-data">
                                 
@@ -54,10 +75,10 @@
                                     <label class=" block text-sm text-gray-600" for="photo">Image de couverture</label>
                                     <input type="file" class="py-2" name="photo" id="photo">
                                 </div>
-                                <textarea id="editor" placeholder="Rédiger votre évènement"></textarea>
+                                <textarea id="editor" name="detailEvent" placeholder="Rédiger votre évènement"></textarea>
                                 
                                 <div class="mt-6">
-                                    <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Ajouter</button>
+                                    <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" name="submitEvent" type="submit">Ajouter</button>
                                 </div>
                             </form>
                             <script>

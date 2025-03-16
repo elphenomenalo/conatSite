@@ -18,6 +18,24 @@
         .active-nav-link { background: #1947ee; }
         .nav-item:hover { background: #1947ee; }
         .account-link:hover { background: #3d68ff; }
+       
+        .message{
+        padding: 8px 0;
+        text-align: center;
+        width: 100%;
+        background-color: #FFCCCC;
+        color: #FF3333;
+        font-size: 1rem;
+    }
+        .msgSuccess{
+        padding: 8px 0;
+        text-align: center;
+        width: 100%;
+        background-color: #CCFFCC;
+        color: #00CC00;
+        font-size: 1rem;
+        }
+    
     </style>
 </head>
 <body class="bg-gray-100 font-family-karla flex">
@@ -102,4 +120,9 @@
 
      <?php
         require_once("../config/db.php");
+        require_once("../Fonctionnalty/eventAction.php");
+        require_once("../Fonctionnalty/programmeAction.php");
+   
+       
      ?>
+

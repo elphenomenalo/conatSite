@@ -1,3 +1,6 @@
+<?php
+  require_once("config/db.php");
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -118,68 +121,32 @@
       <h2 class="program-title" data-aos="zoom-in">Programme</h2>
 
       <div class="program-schedule">
+        <?php if($programmes) :  ?>
         <!-- Jour 1 -->
+         <?php foreach($programmes as $programme) :  ?>
         <div class="day-schedule"  data-aos="fade-down-right">
           <div class="day-header">
-            <h3 class="day-date">17 Avril 2025</h3>
+            <h3 class="day-date"><?= htmlspecialchars($programme["date"]) ?></h3>
           </div>
           <div class="day-events">
             <div class="event">
-              <p class="event-time">09:00</p>
-              <p class="event-title">Cérémonie d'ouverture</p>
-            </div>
-            <div class="event">
-              <p class="event-time">10:30</p>
-              <p class="event-title">Conférence: Leadership et Innovation</p>
-            </div>
-            <div class="event">
-              <p class="event-time">14:00</p>
-              <p class="event-title">Ateliers thématiques</p>
+              <p class="event-time"><?= htmlspecialchars($programme["heureStart"]) ?> <span> - </span><?= htmlspecialchars($programme["heureEnd"]) ?></p>
+              
+              <p class="event-title">Lieu: <?= htmlspecialchars($programme["lieu"]) ?></p>
+            
+              
+              <p class="event-title">Activité :  <?= htmlspecialchars($programme["activity"]) ?></p>
             </div>
           </div>
         </div>
+          <?php endforeach; ?>
 
-        <!-- Jour 2 -->
-        <div class="day-schedule" data-aos="fade-up" data-oas-delay="2000">
-          <div class="day-header">
-            <h3 class="day-date">18 Avril 2025</h3>
-          </div>
-          <div class="day-events">
-            <div class="event">
-              <p class="event-time">09:00</p>
-              <p class="event-title">Sessions de formation</p>
-            </div>
-            <div class="event">
-              <p class="event-time">14:00</p>
-              <p class="event-title">Table ronde: Développement durable</p>
-            </div>
-            <div class="event">
-              <p class="event-time">19:00</p>
-              <p class="event-title">Soirée de gala</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Jour 3 -->
-        <div class="day-schedule" data-aos="fade-down-left" data-oas-delay="4000">
-          <div class="day-header">
-            <h3 class="day-date">19 Avril 2025</h3>
-          </div>
-          <div class="day-events">
-            <div class="event">
-              <p class="event-time">09:00</p>
-              <p class="event-title">Assemblée générale</p>
-            </div>
-            <div class="event">
-              <p class="event-time">14:00</p>
-              <p class="event-title">Élections</p>
-            </div>
-            <div class="event">
-              <p class="event-time">16:00</p>
-              <p class="event-title">Cérémonie de clôture</p>
-            </div>
-          </div>
-        </div>
+        <?php else : ?>
+        <tr>
+            <td colspan="6" class="text-center py-3 px-4">Aucun programme établie pour le moment.</td>
+        </tr>
+    <?php endif; ?>
+        
       </div>
     </div>
   </section>
@@ -188,19 +155,20 @@
  <div>
   <h2 style="text-align: center; margin: 15px 0;">Les évènements</h2>
   <section class="articles">
-
-    <article>
+  <?php if($events) : ?>
+    <?php foreach($events as $event) : ?>
+      <article>
       <div class="article-wrapper">
         <figure>
-          <img src="https://picsum.photos/id/1011/800/450" alt="" />
+          <img src="EventPhoto/<?= htmlspecialchars($event['imgCover']) ?>" alt="<?= htmlspecialchars($event["titleEvent"]) ?>" />
         </figure>
         <div class="article-body">
-          <h2>This is some title</h2>
+          <h2><?= htmlspecialchars($event["titleEvent"]) ?></h2>
           <p>
-            Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+          <?= htmlspecialchars($event["shortEvent"]) ?>
           </p>
           <a href="#" class="read-more">
-            Read more <span class="sr-only">about this is some title</span>
+            Lire plus <span class="sr-only"></span>
             <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
@@ -208,47 +176,12 @@
         </div>
       </div>
     </article>
-    <article>
-  
-      <div class="article-wrapper">
-        <figure>
-          <img src="https://picsum.photos/id/1005/800/450" alt="" />
-        </figure>
-        <div class="article-body">
-          <h2>This is some title</h2>
-          <p>
-            Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
-          </p>
-          <a href="#" class="read-more">
-            Read more <span class="sr-only">about this is some title</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </article>
-    <article>
-  
-      <div class="article-wrapper">
-        <figure>
-          <img src="https://picsum.photos/id/103/800/450" alt="" />
-        </figure>
-        <div class="article-body">
-          <h2>This is some title</h2>
-          <p>
-            Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
-          </p>
-          <a href="#" class="read-more">
-            Read more <span class="sr-only">about this is some title</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </article>
-  </section>
+    <?php endforeach; ?>
+    <?php else : ?>
+        <tr>
+            <td colspan="6" class="text-center py-3 px-4">Aucun évènement programmé pour le moment.</td>
+        </tr>
+    <?php endif; ?>
  </div>
   <!-- <section>
     <div class="container">
@@ -543,7 +476,7 @@
 
         <div class="contact-form" data-aos="fade-left">
           <h3 class="form-title">Envoyez-nous un message</h3>
-          <form class="form">
+          <form class="form" action="Fonctionnalty/phpMail.php" method="PODT">
             <div class="form-group">
               <label for="name" class="form-label">Nom complet</label>
               <input type="text" id="name" name="name" class="form-input" required>
@@ -557,7 +490,7 @@
               <textarea id="message" name="message" rows="4" class="form-input" required></textarea>
             </div>
             <div class="form-group">
-              <button type="submit" class="submit-button">Envoyer</button>
+              <button type="submit" name="submitMail" class="submit-button">Envoyer</button>
             </div>
           </form>
         </div>
